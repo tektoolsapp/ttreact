@@ -1,18 +1,29 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { ThemeProvider, CSSReset } from '@chakra-ui/core'
+import { theme, ThemeProvider, CSSReset } from "@chakra-ui/core";
 
 import Home from '../components/Home';
 import About from '../components/About';
 import Header from '../components/Header';
 //import Footer from '../components/Footer';
 
+const breakpoints = ["360px", "768px", "1024px", "1440px"];
+breakpoints.sm = breakpoints[0];
+breakpoints.md = breakpoints[1];
+breakpoints.lg = breakpoints[2];
+breakpoints.xl = breakpoints[3];
+
+const newTheme = {
+  ...theme,
+  breakpoints
+};
+
 class App extends React.Component {
   
   render(){
     return(
       <main>
-          <ThemeProvider>
+          <ThemeProvider theme={newTheme}>
             <CSSReset />
               <Header/>
               <Switch>
@@ -21,7 +32,6 @@ class App extends React.Component {
                     <Route path="/about" component={About} />
                   </div>  
               </Switch>
-              
           </ThemeProvider>
        </main>
     )
