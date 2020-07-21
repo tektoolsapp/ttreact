@@ -4,6 +4,7 @@ import { theme, ThemeProvider, CSSReset } from "@chakra-ui/core";
 
 import Home from '../components/Home';
 import About from '../components/About';
+import MyobAuth from '../components/MyobAuth';
 import Header from '../components/Header';
 //import Footer from '../components/Footer';
 
@@ -27,10 +28,11 @@ class App extends React.Component {
             <CSSReset />
               <Header/>
               <Switch>
-                  <div className="app">
+                  
                     <Route path="/" component={Home} exact />
                     <Route path="/about" component={About} />
-                  </div>  
+                    <Route path="/auth" component={MyobAuth} />
+                    
               </Switch>
           </ThemeProvider>
        </main>
