@@ -1,10 +1,13 @@
 import React from "react"
+import con from "../config"
 
 function MyobAuth() {
-    return (
+    
+  return (
       <div>
         <h1>Auth</h1>
       </div>
-    );
-  };
- export default MyobAuth
+  );
+};
+
+export default MyobAuth

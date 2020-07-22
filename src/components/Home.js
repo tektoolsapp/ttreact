@@ -1,19 +1,15 @@
 import React, {useState} from "react"
 import con from "../config"
-//import axios from 'axios';
 import { Button } from "@chakra-ui/core";
+
 //const config = require('config');
 //const myob = config.get('myob');
-    //console.log(myob)
-
-//console.log(con.API_SECRET)
-
-
+//console.log(myob)
 
 function Home(){
 
-    const myobConnected = useState(false)
-    console.log(myobConnected)
+    //const myobConnected = useState(false)
+    //console.log(myobConnected)
 
     const apiKey = con.API_KEY
     const redirectUrl = con.REDIRECT_URL
@@ -24,41 +20,19 @@ function Home(){
 
     function getMyob(accessCodeUrl){
 
-        alert(accessCodeUrl)
+        //alert(accessCodeUrl)
+        window.location = accessCodeUrl; 
     }
     
     return(
         <div>
           <h1>Home</h1>
 
-          <Button variantColor="green" onClick={() => getMyob(accessCodeUrl)}>Button</Button>
+          <Button variantColor="green" onClick={() => getMyob(accessCodeUrl)}>Connect to MYOB</Button>
 
         </div>
     )
 
 } 
 
-/*
-class Home extends React.Component {
-  
-    constructor(){
-      super()
-      this.state = {
-      }
-    }
-
-    render(){
-      return(
-        <div>
-          <h1>Home</h1>
-
-          <Button variantColor="green">Button</Button>
-
-        </div>
-      )
-    }
-  }
-
-  */
-
- export default Home
+export default Home
