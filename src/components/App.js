@@ -19,6 +19,8 @@ const newTheme = {
   breakpoints
 };
 
+const reload = () => window.location.reload();
+
 class App extends React.Component {
   
   render(){
@@ -31,7 +33,7 @@ class App extends React.Component {
                   
                     <Route path="/" component={Home} exact />
                     <Route path="/about" component={About} />
-                    <Route path="/auth" component={MyobAuth} />
+                    <Route path="/auth" component={MyobAuth} onEnter={reload}/>
                     
               </Switch>
           </ThemeProvider>
