@@ -17,12 +17,14 @@ function MyobAuth() {
   const redirectUrl = con.REDIRECT_URL
 
   if(code !== 'undefined' && code.length > 0){
-    console.log("GET TOKEN");
+    const tokens = getTokens(apiKey, apiSecret, companyFile, redirectUrl)
+    console.log("GET TOKENS");
+    console.log(tokens);
   } else {
     console.log("TRY AGAIN");
   } 
 
-  function getTokens(apiKey, apiSecret, companyFile, redirectUrl ) {
+  function getTokens(apiKey, apiSecret, companyFile, redirectUrl) {
 
     const config= { headers:{'Content-Type':"application/json"}}
     const data={
